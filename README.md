@@ -1,4 +1,4 @@
-This application was developed for Web Application Developmenr module, as coursework portfolio project at WIUT by student ID: 00012882.
+This application was developed for Web Application Development module, as coursework portfolio project at WIUT by student ID: 00012882.
 
 This is the front-end part of the portfolio. It consists of the Single-Page application with implementation of Angular framework, Angular Materials components and Tailwind CSS Library.
 
