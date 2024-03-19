@@ -1,0 +1,19 @@
+.btn{
+    margin: 0 20px;
+}
+
+.tb{
+    width: 100%;
+}
+
+.btn:nth-child(2){
+    background-color: rgb(221, 143, 54);
+}
+
+.btn:nth-child(3){
+    background-color: rgb(54, 196, 221);
+}
+
+.btn:nth-child(4){
+    background-color: rgb(221, 54, 54);
+}

@@ -1,0 +1,45 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-4/12 p-4">
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Title </mat-label>
+                <input matInput name="title" type="text" [(ngModel)]="editBlog.title">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Content </mat-label>
+                <input matInput name="description" type="text" [(ngModel)]="editBlog.content">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>PostDate </mat-label>
+                <!-- <input matInput name="postDate" type="text" [(ngModel)]="createPost.postDate"> -->
+                <input matInput [matDatepicker]="picker"  [(ngModel)]="editBlog.postDate" name="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Choose User</mat-label>
+                <mat-select [(ngModel)]="uID" [(value)]="selected" name="Category">
+                    @for(u of userObject; track u)
+                    {
+                    <mat-option [value]="u.userID">{{u.username}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-around">
+            <button mat-raised-button  (click)="toHome()">Cancel</button>
+            <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+        </div>
+    </form>
+</div>

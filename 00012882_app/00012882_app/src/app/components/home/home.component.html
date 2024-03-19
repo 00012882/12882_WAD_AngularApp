@@ -1,0 +1,47 @@
+
+
+
+
+<table class="tb" mat-table [dataSource]="blogs" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="PostId">
+      <th mat-header-cell *matHeaderCellDef> PostId </th>
+      <td mat-cell *matCellDef="let element"> {{element.postID}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Content">
+      <th mat-header-cell *matHeaderCellDef> Content </th>
+      <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="PostDate">
+      <th mat-header-cell *matHeaderCellDef> PostDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.postDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.user.username}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <button class="btn" mat-raised-button color="primary" (click)="onEdit(element.id)">Edit</button>
+            <button class="btn" mat-raised-button (click)="onDetails(element.id)">Details</button>
+            <button class="btn" mat-raised-button (click)="onDelete(element.id)">Delete</button>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
