@@ -19,7 +19,8 @@ export class BlogService {
   };
 
   edit(item:Blog){
-    return this.httpClient.put("http://localhost:5084/api/Posts/PutPost", item);
+    const url = `http://localhost:5084/api/Posts/PutPost/${item.postID}`;
+    return this.httpClient.put(url, item);
   };
 
   delete(id:number){
